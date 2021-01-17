@@ -38,7 +38,7 @@ animate();
 function animate() {
 	requestAnimationFrame(animate);
 
-  sphere.rotation.x += 0.002;
+  sphere.rotation.x += 0.008;
   sphere.rotation.y += 0.004;
 
 	renderer.render(scene, camera);
