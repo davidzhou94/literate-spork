@@ -25,6 +25,9 @@ var meshMaterial = new THREE.MeshPhongMaterial({ color: 0xea727d, emissive: 0x58
 
 var sphere = new THREE.Group();
 
+var rotationSpeedX=0.008;
+var rotationSpeedY=0.004;
+
 sphere.add(new THREE.LineSegments(new THREE.WireframeGeometry(geometry), lineMaterial));
 sphere.add(new THREE.Mesh(geometry, meshMaterial));
 
@@ -38,8 +41,8 @@ animate();
 function animate() {
 	requestAnimationFrame(animate);
 
-  sphere.rotation.x += 0.008;
-  sphere.rotation.y += 0.004;
+  sphere.rotation.x += rotationSpeedX;
+  sphere.rotation.y += rotationSpeedY;
 
 	renderer.render(scene, camera);
 }
