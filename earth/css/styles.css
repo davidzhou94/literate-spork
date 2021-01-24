@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+}
+
+#buttonclm {
+  position:absolute;
+  top:50%;
+  left: 10px;
+  /*Makes buttons go halfway on screen relative to height*/
+  transform: translateY(-50%);
+}
