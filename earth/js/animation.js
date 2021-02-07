@@ -23,7 +23,7 @@ var scene = createSceneWithLighting();
 
 var sphereGroup = new THREE.Group();
 sphereGroup.add(createEarthSphere());
-sphereGroup.add(createPoint(42.34, -71.04));// Boston
+sphereGroup.add(createPoint(42.34, -71.04)); // Boston
 scene.add(sphereGroup);
 
 // https://www.w3schools.com/jsref/met_element_addeventlistener.asp
