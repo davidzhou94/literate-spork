@@ -63,12 +63,21 @@ var controls;
 init();
 
 function init() {
+    console.log("heythere")
+
     scene = new THREE.Scene();
 
     camera = new THREE.PerspectiveCamera(45, 4 / 3, 0.1, 100);
     camera.position.set(0.0, 1.5, 3.0);
 
     renderer = new THREE.WebGLRenderer({ antialias: true });
+
+    var width  = window.innerWidth;
+    var height = window.innerHeight;
+    renderer.setSize(width, height);
+
+    var sceneElement = document.getElementById('scene');
+    sceneElement.appendChild(renderer.domElement);
 
     controls = new THREE.OrbitControls(camera, renderer.domElement);
     controls.autoRotate = true;
@@ -90,6 +99,8 @@ function init() {
     var texture = texLoader.load("images/2_no_clouds_4k.jpg");
     texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
 
+    // var loader = new THREE.TextureLoader();
+	// var texture = loader.load("images/2_no_clouds_4k.jpg")
     var earth = new Earth(1.0, texture);
 
 
@@ -162,8 +173,6 @@ function init() {
 
     window.addEventListener('resize', onResize);
     onResize();
-
-    document.body.appendChild(renderer.domElement);
 }
 
 function onResize() {
